@@ -11,7 +11,7 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-app.UseCors(); // this line is added
+app.UseCors();
 
 app.UseAuthorization();
 
