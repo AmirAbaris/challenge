@@ -1,20 +1,32 @@
-<!-- <div class="title">
+<div class="title">
     <h1>Programming Language</h1>
 </div>
-<div class="cards">
-        @if (courses) {
+
+<section class="content">
+    @if (courses) {
+    <div class="letter-box">
         @for (course of courses; track $index) {
-        <div class="course-parent-box">
-            <div class="course-box">
-                <p class="cafe-name">{{course.name | uppercase}}</p>
-                <img class="cafe-img" src="../../../assets/cafe-img.svg" alt="co-working">
-                <p class="cafe-address">{{cafe.address}}</p>
-                <p class="cafe-code">{{cafe.code}}</p>
+        @defer (on viewport) {
+        <mat-card class="card">
+            <div class="main-img">
+                <img src="../../../assets/team-work.jpg" alt="team-work">
             </div>
-        </div>
+            <mat-card-header>
+                <mat-card-title>{{ course.title| titlecase }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            </mat-card-content>
+            <mat-card-actions>
+            </mat-card-actions>
+        </mat-card>
+        }
+        @placeholder {
+        <mat-spinner />
+        }
+        @error {
+        <p>Something went Wrong!</p>
         }
         }
-        @else {
-        <p>No course found!</p>
-        }
-</div> -->
+    </div>
+    }
+</section>
