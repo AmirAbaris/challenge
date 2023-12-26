@@ -4,7 +4,7 @@ namespace api.Controllers;
 
 public class CourseController(ICourseRepository _courseRepository) : BaseApiController
 {
-    [HttpPost]
+    [HttpPost] // just a simple post endpoit to input mock obj
     public async Task<ActionResult<Course>> Create(Course courseIn, CancellationToken cancellationToken)
     {
         return await _courseRepository.CreateAsync(courseIn, cancellationToken);

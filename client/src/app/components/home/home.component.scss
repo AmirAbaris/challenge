@@ -9,15 +9,32 @@
 .letter-box {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 12px;
     gap: 2rem;
-    max-width: 300px;
+    flex-wrap: wrap;
 
     .card {
         img {
             max-width: 300px;
             border-radius: 8px 8px 0px 0px;
+        }
+
+        .header-image {
+            background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+            background-size: cover;
+            margin-left: 6px;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: row;
+
+            p {
+                font-family: 'poppins';
+                font-size: 14px;
+                margin: 5px 0 0 6px;
+            }
         }
 
         mat-card-header {
@@ -27,6 +44,7 @@
 
             mat-card-title {
                 font-family: 'poppins';
+                max-width: 300px;
             }
         }
 
@@ -34,6 +52,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+            max-width: 300px;
 
             .card-info {
                 display: flex;
