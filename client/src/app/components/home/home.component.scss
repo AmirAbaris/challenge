@@ -3,15 +3,26 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
+    min-width: 400px;
 
     .card {
         img {
             max-width: 400px;
         }
 
+        .card-info {
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+        }
+
         mat-card-content {
-            overflow: hidden;
-            word-wrap: break-word;
+
+            .card-content {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
         }
 
         mat-card-actions {

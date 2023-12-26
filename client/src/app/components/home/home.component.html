@@ -2,31 +2,39 @@
     <h1>Programming Language</h1>
 </div>
 
-<section class="content">
-    @if (courses) {
-    <div class="letter-box">
-        @for (course of courses; track $index) {
-        @defer (on viewport) {
-        <mat-card class="card">
-            <div class="main-img">
-                <img src="../../../assets/team-work.jpg" alt="team-work">
+@if (courses) {
+<div class="letter-box">
+    @for (course of courses; track $index) {
+    <mat-card class="card">
+        <div class="main-img">
+            <img src="../../../assets/team-work.jpg" alt="team-work">
+        </div>
+        <mat-card-header>
+            <mat-card-title>{{ course.title | titlecase }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="card-content">
+                <div class="card-info">
+                    <mat-icon>work</mat-icon>
+                    <p>{{course.level}}</p>
+                </div>
+                <div class="card-info">
+                    <mat-icon>group</mat-icon>
+                    <p>{{course.numStudents}}</p>
+                </div>
+                <div class="card-info">
+                    <mat-icon>star</mat-icon>
+                    <p>{{course.rating}}</p>
+                </div>
             </div>
-            <mat-card-header>
-                <mat-card-title>{{ course.title| titlecase }}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-            </mat-card-content>
-            <mat-card-actions>
-            </mat-card-actions>
-        </mat-card>
-        }
-        @placeholder {
-        <mat-spinner />
-        }
-        @error {
-        <p>Something went Wrong!</p>
-        }
-        }
-    </div>
+        </mat-card-content>
+        <mat-divider />
+        <p>{{course.price | currency}}</p>
+
+    </mat-card>
     }
-</section>
+</div>
+}
+@else {
+<mat-spinner />
+}
