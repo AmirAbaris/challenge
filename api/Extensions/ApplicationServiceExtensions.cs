@@ -6,7 +6,7 @@ public static class ApplicationServiceExtensions
 {
     public static IServiceCollection AddApplicationService(this IServiceCollection services, IConfiguration configuration)
     {
-        ///// get values from this file: appsettings.Development.json /////
+        // get values from this file: appsettings.Development.json /////
         // get section
         services.Configure<MongoDbSettings>(configuration.GetSection(nameof(MongoDbSettings)));
 
@@ -26,7 +26,7 @@ public static class ApplicationServiceExtensions
         services.AddCors(options =>
             {
                 options.AddDefaultPolicy(policy =>
-                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
             });
 
         return services;
