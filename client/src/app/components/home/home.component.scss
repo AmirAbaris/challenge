@@ -1,33 +1,60 @@
+.title {
+    h1 {
+        font-family: 'poppins';
+    }
+
+    padding: 24px;
+}
+
 .letter-box {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 12px;
     gap: 2rem;
-    min-width: 400px;
+    max-width: 300px;
 
     .card {
         img {
-            max-width: 400px;
+            max-width: 300px;
+            border-radius: 8px 8px 0px 0px;
         }
 
-        .card-info {
+        mat-card-header {
             display: flex;
-            flex-direction: row;
-            gap: 6px;
-        }
+            justify-content: flex-start;
+            padding: 18px;
 
-        mat-card-content {
-
-            .card-content {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
+            mat-card-title {
+                font-family: 'poppins';
             }
         }
 
-        mat-card-actions {
+        .card-content {
             display: flex;
-            justify-content: flex-end;
+            flex-direction: row;
+            justify-content: space-around;
+
+            .card-info {
+                display: flex;
+                flex-direction: row;
+                gap: 6px;
+
+                p {
+                    font-family: 'poppins';
+                    margin-top: 3px;
+                }
+
+                mat-icon {
+                    vertical-align: middle;
+                }
+            }
         }
     }
+}
+
+.spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

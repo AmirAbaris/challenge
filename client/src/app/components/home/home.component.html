@@ -29,12 +29,14 @@
             </div>
         </mat-card-content>
         <mat-divider />
-        <p>{{course.price | currency}}</p>
+        <b>{{course.price | currency}}</b>
 
     </mat-card>
     }
 </div>
 }
 @else {
-<mat-spinner />
+<div class="spinner">
+    <mat-spinner />
+</div>
 }
