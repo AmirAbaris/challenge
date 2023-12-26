@@ -1,1 +1,20 @@
-<p>home works!</p>
+<div class="title">
+    <h1>Programming Language</h1>
+</div>
+<div class="cards">
+        @if (courses) {
+        @for (course of courses; track $index) {
+        <div class="course-parent-box">
+            <div class="course-box">
+                <p class="cafe-name">{{course.name | uppercase}}</p>
+                <img class="cafe-img" src="../../../assets/cafe-img.svg" alt="co-working">
+                <p class="cafe-address">{{cafe.address}}</p>
+                <p class="cafe-code">{{cafe.code}}</p>
+            </div>
+        </div>
+        }
+        }
+        @else {
+        <p>No course found!</p>
+        }
+</div>

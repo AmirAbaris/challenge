@@ -1,5 +1,4 @@
-// using api.Repositories;
-using api.Services;
+using api.Repositories;
 
 namespace api.Extensions;
 
@@ -7,7 +6,7 @@ public static class RepositoryServiceExtensions
 {
     public static IServiceCollection AddRepositoryServices(this IServiceCollection services)
     {
-        services.AddScoped<ITokenService, TokenService>();
+        services.AddScoped<ICourseRepository, CourseRepository>();
 
         return services;
     }
