@@ -13,8 +13,6 @@ app.UseHttpsRedirection();
 
 app.UseCors(); // this line is added
 
-app.UseAuthentication(); // this line has to be between Cors and Authorization!
-
 app.UseAuthorization();
 
 app.MapControllers();
