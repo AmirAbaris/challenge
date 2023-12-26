@@ -12,9 +12,9 @@ export class CourseService {
 
   readonly #baseApiUrl = environment.apiUrl + 'course/';
 
-  getAll(): Observable<Course | null> {
-    return this.#http.get<Course>(this.#baseApiUrl + 'get-all').pipe(
-      map((res: Course | null) => {
+  getAll(): Observable<Course[] | null> {
+    return this.#http.get<Course[]>(this.#baseApiUrl + 'get-all').pipe(
+      map((res: Course[] | null) => {
         return res || null;
       })
     );
