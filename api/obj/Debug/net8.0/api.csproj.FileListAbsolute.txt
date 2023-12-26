@@ -53,3 +53,14 @@
 /Users/amirabaris/Documents/feel-safe/api/obj/Debug/net8.0/api.genruntimeconfig.cache
 /Users/amirabaris/Documents/feel-safe/api/obj/Debug/net8.0/ref/api.dll
 /Users/amirabaris/Documents/feel-safe/api/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/amirabaris/Documents/challenge/api/obj/Debug/net8.0/api.csproj.AssemblyReference.cache
+/Users/amirabaris/Documents/challenge/api/obj/Debug/net8.0/api.GeneratedMSBuildEditorConfig.editorconfig
+/Users/amirabaris/Documents/challenge/api/obj/Debug/net8.0/api.AssemblyInfoInputs.cache
+/Users/amirabaris/Documents/challenge/api/obj/Debug/net8.0/api.AssemblyInfo.cs
+/Users/amirabaris/Documents/challenge/api/obj/Debug/net8.0/api.csproj.CoreCompileInputs.cache
+/Users/amirabaris/Documents/challenge/api/obj/Debug/net8.0/api.MvcApplicationPartsAssemblyInfo.cs
+/Users/amirabaris/Documents/challenge/api/obj/Debug/net8.0/api.MvcApplicationPartsAssemblyInfo.cache
+/Users/amirabaris/Documents/challenge/api/obj/Debug/net8.0/api.sourcelink.json
+/Users/amirabaris/Documents/challenge/api/obj/Debug/net8.0/api.dll
+/Users/amirabaris/Documents/challenge/api/obj/Debug/net8.0/refint/api.dll
+/Users/amirabaris/Documents/challenge/api/obj/Debug/net8.0/api.pdb
