@@ -35,7 +35,10 @@
             </div>
         </mat-card-content>
         <mat-divider />
-        <b>{{course.price | currency}}</b>
+        <div class="currency">
+            <b>{{course.price | currency}}</b>
+            <p>Add to Card</p>
+        </div>
 
     </mat-card>
     }

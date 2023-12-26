@@ -17,7 +17,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatCardModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    MatDividerModule
+    MatDividerModule,
+    MatButtonModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

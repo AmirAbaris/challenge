@@ -65,10 +65,17 @@
                     font-family: 'poppins';
                     margin-top: 3px;
                 }
+            }
+        }
 
-                mat-icon {
-                    vertical-align: middle;
-                }
+        .currency {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'poppins';
+            margin: 0 6px 0 6px;
+
+            p {
+                color: rgb(58, 58, 168);
             }
         }
     }
