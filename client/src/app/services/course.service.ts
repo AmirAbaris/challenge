@@ -21,6 +21,10 @@ export class CourseService {
   }
 
   getById(): Observable<Course | null> {
-    
+    return this.#http.get<Course>(this.#baseApiUrl + 'get-by-id').pipe(
+      map((res) => {
+        return res || null;
+      })
+    );
   }
 }
