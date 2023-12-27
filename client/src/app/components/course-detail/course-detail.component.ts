@@ -13,7 +13,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   styleUrl: './course-detail.component.scss'
 })
 export class CourseDetailComponent implements OnInit {
-  readonly #router = inject(ActivatedRoute);
+  readonly #router = inject(ActivatedRoute); // TODO: more reseach about activated route
   readonly #courseService = inject(CourseService);
 
   course: Course | null | undefined;
