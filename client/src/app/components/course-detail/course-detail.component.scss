@@ -1,0 +1,42 @@
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .left {
+        padding: 1rem;
+
+        h1 {
+            font-family: 'poppins';
+            font-size: 38px;
+        }
+
+        .basic-info {
+            display: flex;
+            flex-direction: row;
+            gap: 8rem;
+        }
+
+        .additional-info {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .img {
+            img {
+                max-width: 500px;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .right {
+        padding: 1rem;
+    }
+}
+
+.spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

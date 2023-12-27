@@ -5,11 +5,13 @@ import { CourseService } from '../../services/course.service';
 import { take } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-course-detail',
   standalone: true,
-  imports: [MatProgressSpinnerModule],
+  imports: [MatProgressSpinnerModule, MatIconModule, CommonModule],
   templateUrl: './course-detail.component.html',
   styleUrl: './course-detail.component.scss'
 })
