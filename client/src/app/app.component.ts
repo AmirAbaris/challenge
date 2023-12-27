@@ -2,6 +2,7 @@ import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { CourseService } from './services/course.service';
+import { Course } from './models/course.model';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ export class AppComponent implements OnInit {
       const cardValue = localStorage.getItem('courses');
 
       if (cardValue) {
-        this.#courseService.addToCard(JSON.parse(cardValue));
+        const parsedCourses: Course[] = JSON.parse(cardValue);
+        parsedCourses.forEach(course => this.#courseService.addToCard(course));
       }
     }
   }
