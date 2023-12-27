@@ -16,7 +16,7 @@ public class CourseController(ICourseRepository _courseRepository) : BaseApiCont
         return await _courseRepository.GetAllAsync(cancellationToken);
     }
 
-    [HttpGet("get-by-id")]
+    [HttpGet("get-by-id/{courseId}")]
     async Task<ActionResult<Course>> GetById(string courseId, CancellationToken cancellationToken)
     {
         Course? course = await _courseRepository.GetByIdAsync(courseId, cancellationToken);
