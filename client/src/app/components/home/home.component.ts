@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterLink } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -32,7 +33,6 @@ export class HomeComponent implements OnInit {
   readonly #destroyRef = inject(DestroyRef);
 
   courses: Course[] | null | undefined;
-  cardItems: Course[] = [];
 
   ngOnInit(): void {
     this.getAllCourses();
@@ -48,14 +48,24 @@ export class HomeComponent implements OnInit {
   }
 
   addToCard(course: Course): void {
-    this.cardItems.push(course);
+    this.#courseService.addToCard(course);
   }
 
-  getCardCount(): number {
-    return this.cardItems.length;
+  getCardCount(): Observable<number | undefined> {
+    return this.#courseService.cardItems$.pipe(
+      map((courses) => courses?.length)
+    );
   }
 
-  getCardTotal(): number {
-    return this.cardItems.reduce((total, course) => total + course.price, 0);
+  getCardTotal(): Observable<number> {
+    return this.#courseService.cardItems$.pipe(
+      map((courses) => {
+        if (courses) {
+          return courses.reduce((total, course) => total + course.price, 0)
+        }
+
+        return null;
+      })
+    );
   }
 }
