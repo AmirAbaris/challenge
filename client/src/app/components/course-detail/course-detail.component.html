@@ -1,14 +1,28 @@
 @if (course) {
-<h1>{{course.title}}</h1>
-<div class="basic-info">
-    <h2>{{course.tags[0].description}}</h2>
-    <h3> {{course.rating}}</h3>
-</div>
+<section class="left">
+    <h1>{{course.title}}</h1>
+    <div class="basic-info">
+        <h2>{{course.tags[0].description}}</h2>
+        <h3> {{course.rating}}</h3>
+    </div>
 
-<div class="additional-info">
-    <h4>{{course.level}}</h4>
-    <h5>{{course.numStudents}}</h5>
-</div>
+    <div class="additional-info">
+        <h4>{{course.level}}</h4>
+        <h5>{{course.numStudents}}</h5>
+    </div>
+
+    <div class="overview">
+        <p>Overview</p>
+        <p>{{course.description}}</p>
+    </div>
+</section>
+
+<section class="right">
+    <div class="price">{{course.price}}</div>
+    <div class="instructor">
+        <p>{{course.instructor.name}}</p>
+    </div>
+</section>
 }
 @else {
 <p>not found</p>
