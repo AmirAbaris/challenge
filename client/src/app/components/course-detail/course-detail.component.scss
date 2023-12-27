@@ -7,25 +7,47 @@ section {
         padding: 1rem;
 
         h1 {
-            font-family: 'poppins';
-            font-size: 38px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.375rem;
+            /* 38px converted to rem */
+            margin-bottom: 1rem;
         }
 
         .basic-info {
             display: flex;
             flex-direction: row;
-            gap: 8rem;
+            gap: 2rem;
+            /* Adjusted gap for better spacing */
+            align-items: center;
+            /* Center alignment for better consistency */
         }
 
         .additional-info {
             display: flex;
             flex-direction: row;
+            gap: 2rem;
+            margin-top: 1rem;
         }
 
         .img {
             img {
-                max-width: 500px;
-                border-radius: 10px;
+                max-width: 600px;
+                border-radius: 0.625rem;
+            }
+        }
+
+        .overview {
+            margin-top: 2rem;
+
+            .over-title {
+                font-size: 1.5rem;
+                font-family: 'Poppins', sans-serif;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 1.125rem;
+                line-height: 1.5;
             }
         }
     }
@@ -39,4 +61,14 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 1000px) {
+    .left {
+        .img {
+            img {
+                width: 400px;
+            }
+        }
+    }
 }
