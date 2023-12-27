@@ -9,6 +9,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterLink } from '@angular/router';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,7 @@ import { RouterLink } from '@angular/router';
     MatProgressSpinnerModule,
     MatDividerModule,
     MatButtonModule,
+    MatMenuModule,
     RouterLink
   ],
   templateUrl: './home.component.html',
@@ -30,6 +32,7 @@ export class HomeComponent implements OnInit {
   readonly #destroyRef = inject(DestroyRef);
 
   courses: Course[] | null | undefined;
+  cardItems: Course[] = [];
 
   ngOnInit(): void {
     this.getAllCourses();
@@ -42,5 +45,17 @@ export class HomeComponent implements OnInit {
       },
       error: (err) => console.log(err)
     });
+  }
+
+  addToCard(course: Course): void {
+    this.cardItems.push(course);
+  }
+
+  getCardCount(): number {
+    return this.cardItems.length;
+  }
+
+  getCardTotal(): number {
+    return this.cardItems.reduce((total, course) => total + course.price, 0);
   }
 }

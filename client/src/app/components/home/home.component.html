@@ -1,5 +1,18 @@
 <div class="title">
     <h1>Programming Language</h1>
+    <button mat-button [matMenuTriggerFor]="cartMenu">
+        Cart
+    </button>
+
+    <mat-menu #cartMenu="matMenu">
+
+        <!-- <ng-template #emptyCart>
+            <div mat-menu-item>
+                <p>Your cart is empty</p>
+            </div>
+        </ng-template> -->
+    </mat-menu>
+
 </div>
 
 @if (courses) {
@@ -41,7 +54,7 @@
         <mat-divider />
         <div class="currency">
             <b>{{course.price | currency}}</b>
-            <p>Add to Card</p>
+            <p (click)="addToCard(course)">Add to Card</p>
         </div>
 
     </mat-card>
