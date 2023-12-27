@@ -1,7 +1,7 @@
 <div class="title">
     <h1>Programming Language</h1>
     <button mat-button [matMenuTriggerFor]="cartMenu">
-        Cart
+        Cards
         @if (getCardCount() | async) {
         <span>{{getCardCount() | async}}</span>
         }
