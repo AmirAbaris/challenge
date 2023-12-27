@@ -2,16 +2,16 @@
     <h1>Programming Language</h1>
     <button mat-button [matMenuTriggerFor]="cartMenu">
         Cart
-        @if (getCardCount() > 0) {
-        <span>{{getCardCount()}}</span>
+        @if (getCardCount() | async) {
+        <span>{{getCardCount() | async}}</span>
         }
     </button>
 
     <mat-menu #cartMenu="matMenu">
-        @if (getCardCount() > 0) {
+        @if (getCardCount() | async) {
         <div mat-menu-item>
-            <p>Total Courses: {{ getCardCount() }}</p>
-            <p>Total Price: {{ getCardTotal() | currency }}</p>
+            <p>Total Courses: {{ getCardCount() | async }}</p>
+            <p>Total Price: {{ getCardTotalPrice() | async | currency }}</p>
         </div>
         }
         @else {

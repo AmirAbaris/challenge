@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  getCardTotal(): Observable<number> {
+  getCardTotalPrice(): Observable<number | null> {
     return this.#courseService.cardItems$.pipe(
       map((courses) => {
         if (courses) {
