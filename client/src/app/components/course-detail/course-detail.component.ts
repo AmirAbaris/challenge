@@ -2,7 +2,8 @@ import { Component, OnInit, inject } from '@angular/core';
 import { Course } from '../../models/course.model';
 import { ActivatedRoute } from '@angular/router';
 import { CourseService } from '../../services/course.service';
-import { error } from 'console';
+import { take } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-course-detail',
@@ -18,13 +19,13 @@ export class CourseDetailComponent implements OnInit {
   course: Course | null | undefined;
 
   ngOnInit(): void {
-    this.#router.params.subscribe(params => {
+    this.#router.params.pipe(take(1)).subscribe(params => {
       const courseId = params['id'];
     });
   }
 
   getCourseDetails(courseId: string): void {
-    this.#courseService.getById(courseId).subscribe({
+    this.#courseService.getById(courseId).pipe(takeUntilDestroyed()).subscribe({
       next: (res) => {
         this.course = res;
       },
