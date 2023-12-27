@@ -6,4 +6,5 @@ public interface ICourseRepository
 {
     Task<Course> CreateAsync(Course courseIn, CancellationToken cancellationToken);
     Task<List<Course>> GetAllAsync(CancellationToken cancellationToken);
+    Task<Course?> GetByIdAsync(string courseId, CancellationToken cancellationToken);
 }

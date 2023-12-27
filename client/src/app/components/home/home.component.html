@@ -16,7 +16,11 @@
             </mat-card-title>
         </div>
         <mat-card-header>
-            <mat-card-title>{{ course.title | titlecase }}</mat-card-title>
+            <mat-card-title>
+                <a [routerLink]="['/course', course.id]">
+                    {{ course.title | titlecase }}
+                </a>
+            </mat-card-title>
         </mat-card-header>
         <mat-card-content>
             <div class="card-content">

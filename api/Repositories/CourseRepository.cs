@@ -43,4 +43,14 @@ public class CourseRepository : ICourseRepository
 
         return courses;
     }
+
+    public async Task<Course?> GetByIdAsync(string courseId, CancellationToken cancellationToken)
+    {
+        Course? course = await _collection.Find<Course>(course => course.Id == courseId).FirstOrDefaultAsync(cancellationToken);
+
+        if (course is not null)
+            return course;
+
+        return null;
+    }
 }
