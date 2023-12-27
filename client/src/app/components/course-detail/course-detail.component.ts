@@ -1,8 +1,8 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { Course } from '../../models/course.model';
 import { ActivatedRoute } from '@angular/router';
 import { CourseService } from '../../services/course.service';
-import { take } from 'rxjs';
+import { Subject, take } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
@@ -15,17 +15,20 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export class CourseDetailComponent implements OnInit {
   readonly #router = inject(ActivatedRoute); // TODO: more reseach about activated route
   readonly #courseService = inject(CourseService);
+  readonly #destroyRef = inject(DestroyRef);
 
   course: Course | null | undefined;
 
   ngOnInit(): void {
     this.#router.params.pipe(take(1)).subscribe(params => {
       const courseId = params['id'];
+
+      this.getCourseDetails(courseId);
     });
   }
 
   getCourseDetails(courseId: string): void {
-    this.#courseService.getById(courseId).pipe(takeUntilDestroyed()).subscribe({
+    this.#courseService.getById(courseId).pipe(takeUntilDestroyed(this.#destroyRef)).subscribe({
       next: (res) => {
         this.course = res;
       },

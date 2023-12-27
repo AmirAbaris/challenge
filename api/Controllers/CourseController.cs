@@ -4,7 +4,7 @@ namespace api.Controllers;
 
 public class CourseController(ICourseRepository _courseRepository) : BaseApiController
 {
-    [HttpPost] // just a simple post endpoit to input mock obj
+    [HttpPost] // just a simple post end point to input mock obj
     public async Task<ActionResult<Course>> Create(Course courseIn, CancellationToken cancellationToken)
     {
         return await _courseRepository.CreateAsync(courseIn, cancellationToken);
@@ -17,7 +17,7 @@ public class CourseController(ICourseRepository _courseRepository) : BaseApiCont
     }
 
     [HttpGet("get-by-id/{courseId}")]
-    async Task<ActionResult<Course>> GetById(string courseId, CancellationToken cancellationToken)
+    public async Task<ActionResult<Course>> GetById(string courseId, CancellationToken cancellationToken)
     {
         Course? course = await _courseRepository.GetByIdAsync(courseId, cancellationToken);
 

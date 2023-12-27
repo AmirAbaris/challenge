@@ -1,1 +1,7 @@
-<p>course-detail works!</p>
+@if (course) {
+<h1>{{course.id}}</h1>
+<h2>{{course.title}}</h2>
+}
+@else {
+<p>not found</p>
+}
