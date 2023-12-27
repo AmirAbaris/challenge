@@ -47,6 +47,11 @@
             mat-card-title {
                 font-family: 'poppins';
                 max-width: 300px;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
             }
         }
 
