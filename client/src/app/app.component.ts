@@ -16,17 +16,17 @@ export class AppComponent implements OnInit {
   readonly #platformId = inject(PLATFORM_ID);
 
   ngOnInit(): void {
-    this.getLocalStorageValues()
+    if (isPlatformBrowser(this.#platformId)) {
+      this.getLocalStorageValues();
+    }
   }
 
   getLocalStorageValues(): void {
-    if (isPlatformBrowser(this.#platformId)) {
-      const cardValue = localStorage.getItem('courses');
+    const cardValue = localStorage.getItem('courses');
 
-      if (cardValue) {
-        const parsedCourses: Course[] = JSON.parse(cardValue);
-        parsedCourses.forEach(course => this.#courseService.addToCard(course));
-      }
+    if (cardValue) {
+      let parsedCourses: Course[] = JSON.parse(cardValue);
+      parsedCourses.forEach(course => this.#courseService.addToCard(course));
     }
   }
 }

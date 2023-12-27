@@ -40,7 +40,7 @@ export class CourseService {
     this.cardItemSource.next(updatedCourses);
 
     if (isPlatformBrowser(this.#platformId)) {
-      localStorage.setItem('courses', JSON.stringify(course));
+      localStorage.setItem('courses', JSON.stringify(updatedCourses));
     }
   }
 }
