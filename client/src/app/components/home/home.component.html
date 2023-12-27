@@ -2,15 +2,23 @@
     <h1>Programming Language</h1>
     <button mat-button [matMenuTriggerFor]="cartMenu">
         Cart
+        @if (getCardCount() > 0) {
+        <span>{{getCardCount()}}</span>
+        }
     </button>
 
     <mat-menu #cartMenu="matMenu">
-
-        <!-- <ng-template #emptyCart>
-            <div mat-menu-item>
-                <p>Your cart is empty</p>
-            </div>
-        </ng-template> -->
+        @if (getCardCount() > 0) {
+        <div mat-menu-item>
+            <p>Total Courses: {{ getCardCount() }}</p>
+            <p>Total Price: {{ getCardTotal() | currency }}</p>
+        </div>
+        }
+        @else {
+        <div mat-menu-item>
+            <p>No Item in the box!</p>
+        </div>
+        }
     </mat-menu>
 
 </div>
