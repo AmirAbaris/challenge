@@ -2,13 +2,14 @@ import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { Course } from '../../models/course.model';
 import { ActivatedRoute } from '@angular/router';
 import { CourseService } from '../../services/course.service';
-import { Subject, take } from 'rxjs';
+import { take } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-course-detail',
   standalone: true,
-  imports: [],
+  imports: [MatProgressSpinnerModule],
   templateUrl: './course-detail.component.html',
   styleUrl: './course-detail.component.scss'
 })
